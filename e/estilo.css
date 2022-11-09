@@ -1,0 +1,8 @@
+h1{
+    font-family: 'Barlow', sans-serif;
+    font-size:50px ;
+}
+body{
+    background: rgb(142,179,221);
+background: linear-gradient(90deg, rgba(142,179,221,1) 0%, rgba(33,9,121,1) 35%, rgba(155,157,245,1) 100%);
+}

@@ -1,0 +1,31 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(200, 140, 193);
+    color: #fff;
+    text-align: center;
+}
+img{
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    color: #fff;
+    display: block;
+    width: 200px;
+    padding: 20px;
+    margin: 20px auto;
+    border: 2px solid #fff;
+}
+a:hover{
+    box-shadow: 0 0 20px rgb(122, 251, 247);
+    transform: scale(1.1);
+}
