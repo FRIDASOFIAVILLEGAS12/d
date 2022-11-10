@@ -1,0 +1,26 @@
+h1{
+    font-family: 'Barlow', sans-serif;
+    font-size:70px ;
+}
+
+*{
+    margin: 0px;
+    padding: 4px;
+    box-sizing: border-box;
+}
+body{
+    background: rgb(200, 140, 193);
+    color: #fff;
+    text-align: center;
+    ;
+}
+img{
+    height: 300px;
+    width: 300px;
+}
+div{
+    display: grid;
+grid-template-columns:1fr 1fr 1fr 1fr;
+grid-template-rows:auto;
+gap:30px;
+}
