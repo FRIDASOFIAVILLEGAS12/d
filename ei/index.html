@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body onload="opcionestriptomonedas()">
+    <div class="contenedor">
+        <div class="row">
+            <div class="one-half columns">
+                <img src="" alt="imagen cripto">
+            </div>
+            <div class="one-half columns">
+                <h1 class="head"> Cotiza criptomonedas al instante</h1>
+                <form>
+                    <div id="msj-error"></div>
+                    <label>Elige tu moneda</label>
+                    <select
+                    onchange="CotizarMoneda()"
+                    id="moneda">
+                    <option value="">Selecciona</option>
+                    <option value="USD">Dolar de Estados Unidos</option>
+                    <option value="MXN">Peso mexicano </option>
+                    <option value="EUR">Euro</option>
+                    <option value="GBP">Libra esterina</option>
+
+                    </select>
+                    <label>Elige tu criptomoneda</label>
+            <select onchange="CotizarMoneda()"
+                    id="cryptomoneda">
+
+            </select>   
+
+        <button type="button" class="button"onclick="CotizarMoneda()">Calcular</button> 
+        </form>
+        <div class="resultado" id="divresultado"></div>
+            </div>
+        </div>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html>
