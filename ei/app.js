@@ -20,13 +20,17 @@ const opcionestriptomonedas=async()=>{
         const cripto=document.querySelector("#cryptomoneda").value;
  
         if(moneda=='' || cripto==''){
-           //sweetalert mostrarError("msj-error","FALATA SELECCIONAR CAMPOS");
+         mostrarError("msj-error","FALATA SELECCIONAR CAMPOS");
             return;
         }
+
         cotizar(moneda, cripto);
         }
-    const cotizar=async(moneda, cripto)=>{
-    
+   
+    const mostrarError=(elemento, mensaje)=>{
+        divError=document.querySelector(elemnto);
+        divError.innerHTML=`<p class="red darken-4 error">${mensaje} </p>`;
+        setTimeout(()=>{divError.innerHTML=``;},2000);
     }
     
     
