@@ -29,15 +29,16 @@
             <div class="offcanvas-body">
               <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li class="nav-item">
-                  <a class="nav-link" data-bs-toggle="modal" data-bs-target="#crearModal" href="#">CREAR CUENTA</a>
+                  <a class="nav-link" data-bs-toggle="modal" data-bs-target="#crearModal" href="#" id="crear">CREAR CUENTA</a>
                 </li>
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                    SESION
                   </a>
                   <ul class="dropdown-menu dropdown-menu-dark">
-                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#iniciarModal" href="">INICIAR SESION</a></li>
-                    <li><a class="dropdown-item" href="#">CERRAR SESION</a></li>
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#iniciarModal" href="" id="iniciar">INICIAR SESION</a></li>
+                    <li><a class="dropdown-item" href="#" id="btnCerrar">CERRAR SESION</a></li>
+                    
               </ul>
             </div>
           </div>
@@ -48,7 +49,7 @@
         <div class="card-header">
           BIENVEIDOS
         </div>
-        <div class="card-body">
+        <div class="card-body" id="container">
         <h1>MI PRIMERA VEZ CON FIREBASE</h1>
         </div>
         <div class="card-footer text-muted">
@@ -73,12 +74,12 @@
             <form>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email </label>
-                  <input type="email" class="form-control" id="iniciarEmail1" aria-describedby="emailHelp">
+                  <input type="email" class="form-control" id="iniciarEmail" aria-describedby="emailHelp">
                 
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="iniciarPassword1">
+                  <input type="password" class="form-control" id="iniciarPassword">
                 </div>
                 
               </form>
@@ -87,9 +88,10 @@
 
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success"><i class="bi bi-arrow-right-square m-2"></i>Iniciar</button>
-          <button type="button"  class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill m-2"></i>Cancelar</button>
-         
+          <button type="button"  class="btn btn-primary" id="btnGoogle" data-bs-dismiss="modal"> <i class="bi bi-google m-2" ></i></i>GOOGLE</button>
+            <button type="button" class="btn btn-success" id="btnIniciar"><i class="bi bi-arrow-right-square m-2"></i>Iniciar</button>
+          <button type="button"  class="btn btn-danger" data-bs-dismiss="modal" ><i class="bi bi-x-circle-fill m-2"></i>Cancelar</button>
+
         </div>
       </div>
     </div>
@@ -111,12 +113,12 @@
             <form>
                 <div class="mb-3">
                   <label for="exampleInputEmail1" class="form-label">Email </label>
-                  <input type="email" class="form-control" id="iniciarEmail1 " autocomplete="off" required >
+                  <input type="email" class="form-control" id="crearEmail" autocomplete="off" required >
                 
                 </div>
                 <div class="mb-3">
                   <label for="exampleInputPassword1" class="form-label">Password</label>
-                  <input type="password" class="form-control" id="iniciarPassword1" autocomplete="off" required >
+                  <input type="password" class="form-control" id="crearPassword" autocomplete="off" required >
                 </div>
                 
               </form>
@@ -125,8 +127,9 @@
 
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-success" id="btnCrearCuenta" onclick="crearCuenta"> <i class="bi bi-person-fill-add m-2"></i>CREAR</button>
+            <button type="button" class="btn btn-success" id="btnCrear"> <i class="bi bi-person-fill-add m-2"></i>CREAR</button>
           <button type="button"  class="btn btn-danger" data-bs-dismiss="modal"><i class="bi bi-x-circle-fill m-2"></i>Cancelar</button>
+
         </div>
       </div>
     </div>
