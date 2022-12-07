@@ -17,8 +17,16 @@ const auth = getAuth(app);
 onAuthStateChanged(auth, (user) => {
   const container = document.querySelector("#container");
   checarEstado(user);
+  
   if (user) {
-    container.innerHTML = `<h1>Bienvenido ${user.email}</h1>`;
+    container.innerHTML = `
+    
+    <div class="d-grid gap-2 d-md-block">
+    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Pablo">
+      <i class="bi bi-person-fill-add m-2"></i> Agregar alumno
+    </button></div>  
+    
+    <h1>Bienvenido ${user.email}</h1>`;
     const uid = user.uid;
   } else {
     container.innerHTML = `<h1>No Hay Usuario</h1>`;
