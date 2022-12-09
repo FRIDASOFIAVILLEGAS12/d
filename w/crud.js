@@ -27,14 +27,14 @@ window.addEventListener("DOMContentLoaded", async (e) => {
         querySnapshot.forEach((doc) => {
             const alumno = doc.data();
             divAlumnos.innerHTML += `
-                <tr>
-                    <td>${alumno.nocontrol}</td>
-                    <td>${alumno.nombre}</td>
-                    <td>${alumno.apaterno}</td>
-                    <td>${alumno.amaterno}</td>
-                    <td>${alumno.carrera}</td>
-                    <td><button class="btn btn-danger btnEliminarAlumno" data-id="${doc.id}"><i class="bi bi-trash"></i></button></td>
-                    <td><button class="btn btn-primary btnEditarAlumno"  data-bs-toggle="modal" data-bs-target="#editModal"   data-id="${doc.id}"><i class="bi bi-pencil"></i></button></td>
+                <tr class="table-dark">
+                    <td class="table-dark">${alumno.nocontrol}</td>
+                    <td class="table-dark">${alumno.nombre}</td>
+                    <td class="table-dark">${alumno.apaterno}</td>
+                    <td class="table-dark">${alumno.amaterno}</td>
+                    <td class="table-dark">${alumno.carrera}</td>
+                    <td class="table-dark"><button class="btn btn-danger btnEliminarAlumno" data-id="${doc.id}"><i class="bi bi-trash"></i></button></td>
+                    <td class="table-dark"><button class="btn btn-primary btnEditarAlumno"  data-bs-toggle="modal" data-bs-target="#editModal"   data-id="${doc.id}"><i class="bi bi-pencil"></i></button></td>
                 </tr>`;
         });
  

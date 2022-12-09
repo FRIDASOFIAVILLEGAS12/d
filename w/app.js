@@ -21,12 +21,31 @@ onAuthStateChanged(auth, (user) => {
   if (user) {
     container.innerHTML = `
     
-    <div class="d-grid gap-2 d-md-block">
-    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#Pablo">
+    <h1>Bienvenido ${user.email}</h1>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Pablo">
       <i class="bi bi-person-fill-add m-2"></i> Agregar alumno
-    </button></div>  
+      </button>
+    <br><br>
+
+      <table class="table table-dark">
+<tr class="table-dark">
+<td class="table-dark">marca</td>
+<td class="table-dark">modelo</td>
+<td class="table-dark">memoria</td>
+<td class="table-dark">procesador</td>
+<td class="table-dark">ram</td>
+<td class="table-dark">pixeles</td>
+</tr>
+</table>
+
+ 
+
+
+<table class="table table-dark" id="lista">
     
-    <h1>Bienvenido ${user.email}</h1>`;
+  </table>
+        
+    `;
     const uid = user.uid;
   } else {
     container.innerHTML = `<h1>No Hay Usuario</h1>`;
