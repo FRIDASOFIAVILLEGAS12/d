@@ -33,6 +33,7 @@ window.addEventListener("DOMContentLoaded", async (e) => {
                     <td class="table-dark">${alumno.apaterno}</td>
                     <td class="table-dark">${alumno.amaterno}</td>
                     <td class="table-dark">${alumno.carrera}</td>
+                    <td class="table-dark">${alumno.edad}</td>
                     <td class="table-dark"><button class="btn btn-danger btnEliminarAlumno" data-id="${doc.id}"><i class="bi bi-trash"></i></button></td>
                     <td class="table-dark"><button class="btn btn-primary btnEditarAlumno"  data-bs-toggle="modal" data-bs-target="#editModal"   data-id="${doc.id}"><i class="bi bi-pencil"></i></button></td>
                 </tr>`;
@@ -75,6 +76,7 @@ const btnsDelete = document.querySelectorAll(".btnEliminarAlumno");
                     document.querySelector("#eapaterno").value=alumno.apaterno;
                     document.querySelector("#eamaterno").value=alumno.amaterno;
                     document.querySelector("#ecarrera").value=alumno.carrera;
+                     document.querySelector("#eadad").value=alumno.edad;
                     editStatus = true;
                     id = data.id;
                 } catch (error) {
@@ -94,13 +96,14 @@ btnAgregarAlumno.addEventListener("click",()=>{
     const apaterno=document.querySelector("#apaterno").value;
     const amaterno=document.querySelector("#amaterno").value;
     const carrera=document.querySelector("#carrera").value;
+  const edad=document.querySelector("#edad").value;
 
-    if(nocontrol=="" || nombre=="" || apaterno=="" || amaterno=="" || carrera==""){
+    if(nocontrol=="" || nombre=="" || apaterno=="" || amaterno=="" || carrera=="" || edad==""){
         Swal.fire("falta llenar Campos");
         return;
     }
 
-    const alumno={ nocontrol, nombre, apaterno,amaterno,carrera};
+    const alumno={ nocontrol, nombre, apaterno,amaterno,carrera,edad};
 
     if (!editStatus) {
         addDoc(coleccion, alumno);        
@@ -122,14 +125,15 @@ btnGuardarAlumno.addEventListener("click",()=>{
     const nombre=document.querySelector("#enombre").value;
     const apaterno=document.querySelector("#eapaterno").value;
     const amaterno=document.querySelector("#eamaterno").value;
-    const carrera=document.querySelector("#ecarrera").value;
-
-    if(nocontrol=="" || nombre=="" || apaterno=="" || amaterno=="" || carrera==""){
+      const carrera=document.querySelector("#ecarrera").value;
+        const edad=document.querySelector("#eedad").value;
+  
+    if(nocontrol=="" || nombre=="" || apaterno=="" || amaterno=="" || carrera=="" || edad==""){
         Swal.fire("falta llenar Campos");
         return;
     }
 
-    const alumno={ nocontrol, nombre, apaterno,amaterno,carrera};
+    const alumno={ nocontrol, nombre, apaterno,amaterno,carrera,edad};
 
     if (editStatus) {
         updateDoc(doc(db, "alumnos", id), alumno);
