@@ -76,7 +76,7 @@ const btnsDelete = document.querySelectorAll(".btnEliminarAlumno");
                     document.querySelector("#eapaterno").value=alumno.apaterno;
                     document.querySelector("#eamaterno").value=alumno.amaterno;
                     document.querySelector("#ecarrera").value=alumno.carrera;
-                     document.querySelector("#eadad").value=alumno.edad;
+                     document.querySelector("#eedad").value=alumno.edad;
                     editStatus = true;
                     id = data.id;
                 } catch (error) {
