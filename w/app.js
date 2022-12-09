@@ -34,6 +34,7 @@ onAuthStateChanged(auth, (user) => {
 <td class="table-dark">Apellido Paterno</td>
 <td class="table-dark">Apellido Materno</td>
 <td class="table-dark">Carrera</td>
+<td class="table-dark">Edad</td>
 <td class="table-dark">Herramientas</td>
 </tr>
 </table>
