@@ -29,12 +29,12 @@ onAuthStateChanged(auth, (user) => {
 
       <table class="table table-dark">
 <tr class="table-dark">
-<td class="table-dark">marca</td>
-<td class="table-dark">modelo</td>
-<td class="table-dark">memoria</td>
-<td class="table-dark">procesador</td>
-<td class="table-dark">ram</td>
-<td class="table-dark">pixeles</td>
+<td class="table-dark">Numero de Control</td>
+<td class="table-dark">Nombre</td>
+<td class="table-dark">Apellido Paterno</td>
+<td class="table-dark">Apellido Materno</td>
+<td class="table-dark">Carrera</td>
+<td class="table-dark">Herramientas</td>
 </tr>
 </table>
 
