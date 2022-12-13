@@ -149,10 +149,12 @@ const checarEstado = (user = null) => {
     document.querySelector("#iniciar").style.display = "block";
     document.querySelector("#crear").style.display = "block";
     document.querySelector("#btnCerrar").style.display ="none";
+    document.querySelector("#escan").style.display ="none";
   } else {
     document.querySelector("#iniciar").style.display = "none";
     document.querySelector("#crear").style.display = "none";
     document.querySelector("#btnCerrar").style.display ="block";
+    document.querySelector("#escan").style.display ="block";
   }
 };
 
