@@ -4,10 +4,13 @@ import {
   getAuth,
   createUserWithEmailAndPassword,
   GoogleAuthProvider,
-  signInWithEmailAndPassword,
-  onAuthStateChanged,
-  signOut,
-  signInWithPopup,
+   signInWithEmailAndPassword,
+   onAuthStateChanged,
+   signInWithPhoneNumber,
+    signInWithPopup,
+    signInAnonymously,
+    signOut,
+    RecaptchaVerifier
 } from "https://www.gstatic.com/firebasejs/9.14.0/firebase-auth.js";
 
 let user = null;
@@ -33,8 +36,12 @@ onAuthStateChanged(auth, (user) => {
 <td class="table-dark">Nombre</td>
 <td class="table-dark">Autor</td>
 <td class="table-dark">Descripcion</td>
+<td class="table-dark">Editorial</td>
+<td class="table-dark">Edicion</td>
+<td class="table-dark">eliminar</td>
+<td class="table-dark">editar</td>
 <td class="table-dark">Codigo QR</td>
-<td class="table-dark">Herramientas</td>
+
 </tr>
 </table>
 
@@ -58,6 +65,9 @@ const btnGoogle = document.querySelector("#btnGoogle");
 const btnIniciar = document.querySelector("#btnIniciar");
 const btnCerrar = document.querySelector("#btnCerrar");
 
+
+
+
 btnIniciar.addEventListener("click", async (e) => {
   e.preventDefault();
   const email = document.querySelector("#iniciarEmail");
@@ -80,6 +90,58 @@ btnGoogle.addEventListener("click", async (e) => {
     console.log(error);
   }
 });
+const btnAnonimo=document.querySelector("#btinco");
+btnAnonimo.addEventListener('click', async(e)=>{
+  e.preventDefault();
+  try{
+    const result= await signInAnonymously(auth);
+    console.log(result);
+    user=result.user;
+    bootstrap.Modal.getInstance(document.getElementById('iniciarModal')).hide();
+  }catch(error){
+    Swal.fire('Error Al iniciar secion de anonimo')
+  }
+
+});
+const btnFon=document.querySelector("#telefono");
+btnFon.addEventListener('click', async(e)=>{
+  e.preventDefault();
+  try{
+    const {value:tel}=await Swal.fire({
+      title: 'Coloque su num de telefono',
+      input: 'tel',
+      inputLabel: 'Phone',
+      inputValue: '+52',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancel',
+      confirmButtonText: 'confirm',
+      showCancelButton: true,
+    })
+    window.recaptchaVerifier=new RecaptchaVerifier('recaptcha', {'size':'invisible'}, auth);
+    const appVerifier=window.recaptchaVerifier;
+    const confirmationResult=await signInWithPhoneNumber(auth, tel, appVerifier)
+    console.log(confirmationResult);
+    window.confirmationResult=confirmationResult;
+    const {value:code}=await Swal.fire({
+      title: 'Coloca tu codigo',
+      input: 'text',
+      inputLabel: 'Code',
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      cancelButtonText: 'Cancel',
+      confirmButtonText: 'Verify',
+      showCancelButton: true,
+    })
+
+    const result=await window.confirmationResult.confirm(code)
+    user=result.user;
+    checarEstado(user)
+
+  }catch(error){
+    Swal.fire('Error al iniciar con num de telefono');
+  }
+  });
 
 const checarEstado = (user = null) => {
   console.log(user);

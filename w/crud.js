@@ -36,9 +36,27 @@ window.addEventListener("DOMContentLoaded", async (e) => {
                     <td class="table-dark">${alumno.edad}</td>
                     <td class="table-dark"><button class="btn btn-danger btnEliminarAlumno" data-id="${doc.id}"><i class="bi bi-trash"></i></button></td>
                     <td class="table-dark"><button class="btn btn-primary btnEditarAlumno"  data-bs-toggle="modal" data-bs-target="#editModal"   data-id="${doc.id}"><i class="bi bi-pencil"></i></button></td>
-                </tr>`;
+                    <td><button class="btn btn-warning btnQRAlumnos" data-bs-toggle="modal" data-bs-target="#qrModal"   data-id="${doc.id}"><i class="bi bi-qr-code"></i></button></td>
+                    </tr>`;
         });
- 
+        const btnQRAlumno = document.querySelectorAll(".btnQRAlumnos");
+        btnQRAlumno.forEach((btn) => {
+            btn.addEventListener("click", async (e) => {
+                try {
+                    id=btn.dataset.id;
+                    console.log(id);
+                    const data= await getDoc(doc(db, "alumnos", id));
+                    const alumno = data.data();                   
+                            const contenedorQR =document.getElementById('divqr');
+                            contenedorQR.innerHTML=""
+                            const QR = new QRCode (contenedorQR);
+                            QR.makeCode(id);
+                            
+                        } catch(error){
+                            console.log(error);
+                        }
+                    });
+                });
 const btnsDelete = document.querySelectorAll(".btnEliminarAlumno");
         //console.log(btnsDelete);
         btnsDelete.forEach((btn,idx) =>
@@ -107,7 +125,7 @@ btnAgregarAlumno.addEventListener("click",()=>{
 
     if (!editStatus) {
         addDoc(coleccion, alumno);        
-        bootstrap.Modal.getInstance(document.getElementById('addModal')).hide();
+        bootstrap.Modal.getInstance(document.getElementById('Pablo')).hide();
     } 
 
     Swal.fire({
