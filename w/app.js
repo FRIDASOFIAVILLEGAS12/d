@@ -33,7 +33,6 @@ onAuthStateChanged(auth, (user) => {
 <td class="table-dark">Nombre</td>
 <td class="table-dark">Autor</td>
 <td class="table-dark">Descripcion</td>
-<td class="table-dark">Imagen </td>
 <td class="table-dark">Codigo QR</td>
 <td class="table-dark">Herramientas</td>
 </tr>
