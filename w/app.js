@@ -23,18 +23,17 @@ onAuthStateChanged(auth, (user) => {
     
     <h1>Bienvenido ${user.email}</h1>
     <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#Pablo">
-      <i class="bi bi-person-fill-add m-2"></i> Agregar alumno
+      <i class="bi bi-person-fill-add m-2"></i> Agregar Libro
       </button>
     <br><br>
 
       <table class="table table-dark">
 <tr class="table-dark">
-<td class="table-dark">Numero de Control</td>
+<td class="table-dark">Codigo</td>
 <td class="table-dark">Nombre</td>
-<td class="table-dark">Apellido Paterno</td>
-<td class="table-dark">Apellido Materno</td>
-<td class="table-dark">Carrera</td>
-<td class="table-dark">Edad</td>
+<td class="table-dark">Autor</td>
+<td class="table-dark">Descripcion</td>
+<td class="table-dark">Codigo QR</td>
 <td class="table-dark">Herramientas</td>
 </tr>
 </table>
